@@ -1,5 +1,6 @@
 const API_KEY = "2f6f5509c417473dba8e574f77d24a1a";
 const url = "https://newsapi.org/v2/everything?q=";
+// const axios = require('axios').default;
 window.addEventListener("load", () => fetchNews("India"));
 
 function reload() {
@@ -7,9 +8,16 @@ function reload() {
 }
 
 async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-    const data = await res.json();
-    bindData(data.articles);
+    // const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    // const data = await res.json();
+    // bindData(data.articles);
+    axios.get(`${url}${query}&apiKey=${API_KEY}`)
+  .then(function (response) {
+    // handle success
+    bindData(response.data.articles);
+    // console.log(response);
+  })
+  
 }
 
 function bindData(articles) {
