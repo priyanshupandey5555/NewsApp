@@ -1,7 +1,11 @@
 window.addEventListener("load", () => fetchNews("India"));
 
+let curSelectedNav = null;
+
 function reload() {
   fetchNews("India");
+  curSelectedNav?.classList.remove("active");
+  curSelectedNav = null;
 }
 
 async function fetchNews(query) {
@@ -73,7 +77,7 @@ function fillDataInCard(cardClone, article) {
   });
 }
 
-let curSelectedNav = null;
+
 function onNavItemClick(id) {
   fetchNews(id);
   const navItem = document.getElementById(id);
