@@ -36,16 +36,19 @@ ul{
 }
 nav{
     background-color:#f3faff;
+    background-color: #0F0F0F;
     box-shadow:0 0 4px #bbd0e2;
     position:fixed;
     top:0;
     z-index: 99;
     left:0;
     right:0;
+    color: white;
 }
 .main-nav{
     justify-content:space-between;
     padding-block:8px;
+   
 }
 .company-logo img{
     width:120px;
@@ -70,13 +73,20 @@ nav{
     height:32px;
     gap:8px;
 }
+
+button{
+    cursor: pointer;
+}
+
 .news-input{
     width:200px;
     height:100%;
     padding-inline:12px;
     border-radius:4px;
-    border:2px solid #bbd0e2;
+    border:2px solid #454e55;
     font-family:"Roboto",sans-serif;
+    background-color: #0F0F0F;
+    color: white
 }
 .search-button{
     background-color:var(--accent-color);
@@ -92,10 +102,7 @@ nav{
 main{
     padding-block:20px;
     margin-top: 90px;
-}
-
-button{
-    cursor: pointer;
+    background-color: #131821;
 }
 
 .cards-container{
@@ -108,16 +115,17 @@ button{
 .card{
     width:360px;
     min-height:400px;
-    box-shadow: 0 0 4px #d4ecff;
+    /* box-shadow: 0 0 4px #d4ecff; */
     border-radius:4px;
     cursor:pointer;
-    background-color: #fff;
+    background-color: #000000;
     overflow:hidden;
     transition: all 0.3s ease;
+    color: white;
 }
 .card:hover{
     box-shadow:1px 1px 8px #d4ecff;
-    background-color:#f9fdff;
+    background-color: #000000;
     transform:translateY(-2px);
 }
 .card-header img {
@@ -128,8 +136,14 @@ button{
 
 .card-content {
     padding: 12px;
+    color: white;
 }
 
 .news-source {
     margin-block: 12px;
+}
+
+.news-desc {
+    margin-block: 12px;
+    color: rgb(195, 194, 214);
 }

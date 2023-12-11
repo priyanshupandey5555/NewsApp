@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="not_css" href="dark-style.css" id="darkcss">
+    <link rel="stylesheet" href="style.css" id="lightcss">
 </head>
 <body>
     <nav>
         <div class="main-nav container flex">
             <a href="#" onclick = "reload()" class ="company-logo">
-                <img src="assests\images.jpeg" alt="company logo">
+                <img src="assests\images.png"  alt="company logo" style="filter: drop-shadow(-1px -1px 2px #ffffff);">
               </a> 
               <div class="nav-links">
                 <ul class = "flex">
                     <li class="hover-link nav-item" id = "ipl" onclick = "onNavItemClick('ipl')">IPL</li>
                     <li class="hover-link nav-item" id = "finance" onclick = "onNavItemClick('finance')">Finance</li>
                     <li class="hover-link nav-item" id = "politics" onclick = "onNavItemClick('politics')">Politics</li>
-                </ul>
+                    <li class="hover-link nav-item" id = "fashion" onclick = "onNavItemClick('fashion')">Fashion</li>
+                    <li class="hover-link nav-item" id = "science" onclick = "onNavItemClick('science')">Science</li>
+                    <li class="hover-link nav-item" id = "health" onclick = "onNavItemClick('health')">Health</li>
+                    <li class="hover-link nav-item" id = "entertainment" onclick = "onNavItemClick('entertainment')">Entertainment</li>
+                    <button id="darkmode" style="padding: 0.4rem;color: rgb(0, 0, 0);background-color: rgb(0, 0, 0);border-radius: 0.3rem;margin-left: 4rem;" onclick="changeToDarkMode(this)"><img style="width: 1.5rem;filter: invert(100%);" src="assests/dark.png"/></button>
+                    <button id="lightmode" style="padding: 0.4rem;color: black;background-color: rgb(255, 255, 255);display: none;border-radius: 0.3rem;margin-left: 4rem;" onclick="changeToLightMode(this)"><img style="width: 1.5rem;" src="assests/light.png"/></button>
+                  </ul>
               </div> 
               <div class="search-bar">
                 <input id ="search-text" type="text" class="news-input" placeholder = "e.g. Science">
@@ -32,7 +39,7 @@
         </div>
     </main>
 
-    <template id = "template-news-card">
+    <template id = "template-news-card" class="mt-1">
         <div class="card">
             <div class="card-header">
               <img src="https://via.placeholder.com/400x200" alt="news-image" id = "news-img">
