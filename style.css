@@ -94,6 +94,10 @@ main{
     margin-top: 90px;
 }
 
+button{
+    cursor: pointer;
+}
+
 .cards-container{
     justify-content: space-between;
     flex-wrap:wrap;
