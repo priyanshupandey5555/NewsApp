@@ -1,7 +1,7 @@
 window.addEventListener("load", () => fetchNews("India"));
 
 function reload() {
-  window.location.reload();
+  fetchNews("India");
 }
 
 async function fetchNews(query) {
@@ -24,6 +24,32 @@ function bindData(articles) {
     fillDataInCard(cardClone, article);
     cardsContainer.appendChild(cardClone);
   });
+}
+
+function changeToDarkMode(){
+  const darkMode=document.querySelector("#darkmode");
+  const lightMode=document.querySelector("#lightmode");
+  const darkCSS=document.querySelector("#darkcss");
+  const lightCSS=document.querySelector("#lightcss");
+
+  darkCSS.rel="stylesheet";
+  lightCSS.rel="not_ss";
+
+  darkMode.style.display="none";
+  lightMode.style.display="inline-block";
+}
+
+function changeToLightMode(){
+  const darkMode=document.querySelector("#darkmode");
+  const lightMode=document.querySelector("#lightmode");
+  const darkCSS=document.querySelector("#darkcss");
+  const lightCSS=document.querySelector("#lightcss");
+
+  darkCSS.rel="not_ss";
+  lightCSS.rel="stylesheet";
+
+  lightMode.style.display="none";
+  darkMode.style.display="inline-block";
 }
 
 function fillDataInCard(cardClone, article) {
